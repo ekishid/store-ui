@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { Outlet, createRootRoute } from '@tanstack/react-router'
-import Header from '../components/layout/Header.tsx';
-import {useState} from 'react';
-import Modal from '../components/Modal.tsx';
-import Sidebar from '../components/Sidebar.tsx';
+import Header from '../components/layout/Header.tsx'
+import {useState} from 'react'
+import Modal from '../components/Modal.tsx'
+import Sidebar from '../components/Sidebar.tsx'
+import Footer from '../components/layout/Footer.tsx';
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -19,7 +20,7 @@ function RootComponent() {
         <Outlet />
         <Modal isOpen={showLogin} close={() => setShowLogin(false)}/>
         <Sidebar close={() => setShowSidebar(false)} isOpen={showSidebar}/>
-        <footer className="min-h-[400px] w-full bg-indigo-900 mt-20">Footer</footer>
+        <Footer/>
       </div>
     </React.Fragment>
   )
