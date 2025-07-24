@@ -21,8 +21,8 @@ const Modal = ({ close, isOpen }: ModalProps) => {
   }, [isOpen])
 
   return (
-    <div className={`fixed h-screen w-screen backdrop-blur-xs z-50 ${isOpen ? 'flex' : 'hidden'}`}>
-      <div ref={loginRef} className="bg-white p-3 rounded-lg h-[400px] w-[300px] top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2 flex flex-col justify-between">
+    <div className={`fixed h-screen w-screen backdrop-blur-xs z-50 flex ${isOpen ? 'opacity-100' : 'opacity-0 invisible'} transition-all ease-in-out duration-300`}>
+      <div ref={loginRef} className={`bg-white p-6 rounded-lg h-[400px] w-[300px] top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2 flex flex-col justify-between ${isOpen ? 'opacity-100 visible' : 'invisible opacity-0'} transition-all ease-in-out duration-300`}>
         <div className="flex justify-end mb-8">
           <FontAwesomeIcon icon={faXmark} className="cursor-pointer text-xl" onClick={() => close()} />
         </div>
