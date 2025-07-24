@@ -2,10 +2,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faCartPlus, faChevronLeft, faChevronRight, faEye} from '@fortawesome/free-solid-svg-icons'
 import {useEffect, useRef, useState} from 'react'
 import SVG from '../assets/react.svg'
+import {Link} from '@tanstack/react-router';
 
 const Card = () => {
   return (
-    <div className="relative group/card z-10 hover:scale-[102%] transition-all ease-in-out duration-200 gap-3 bg-neutral-100 min-w-[350px] max-w-[350px] h-[370px] rounded-2xl p-2 shadow-lg cursor-pointer">
+    <Link to="/product" className="relative group/card z-10 hover:scale-[102%] transition-all ease-in-out duration-200 gap-3 bg-neutral-100 min-w-[350px] max-w-[350px] h-[370px] rounded-2xl p-2 shadow-lg cursor-pointer">
       <div className="bg-white hidden absolute top-5 right-5 p-2 rounded-lg group-hover/card:flex">
         <FontAwesomeIcon icon={faEye} />
       </div>
@@ -21,7 +22,7 @@ const Card = () => {
           Add to cart
         </button>
       </div>
-    </div>
+    </Link>
   )
 }
 const TrendingProducts = () => {
